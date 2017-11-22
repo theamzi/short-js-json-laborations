@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+     
+    	<meta charset="utf-8">
+    </head>
+<body>
+<script src="jquery-2.1.1.js">
+
+    </script>
+
+    
+    
+  
+     
+    
+
+  <input type="text" name="varde" id="inp1">
+
+        
+<input onclick="funktion()" id ="button" type="submit" name="skicka" class="button" value="Skicka" />
+
+        
+        <script type="text/javascript">
+            
+            
+
+           
+            
+   //Gör det möjligt att trycka med enterknappen i textboxen inp1             
+$("#inp1").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#button").click();
+    }
+});
+    
+            
+        </script>
+        
+        
+     <div id="1">      </div>
+
+    
+    
+    <div id="2">    </div>
+    
+    
+    <div id="3">    </div>
+    
+<script>
+    
+    function funktion()  {
+      
+        $.getJSON( "uppgift3.php?varde=4" + $("#inp1").val(), function( data ) {
+$.each( data, function( key, val ) {
+
+    document.getElementById("1").innerHTML = (val);
+    document.getElementById("2").innerHTML = (val* $("#inp1").val());
+    document.getElementById("3").innerHTML = (key);
+
+    });
+});
+        
+        }
+    
+        
+    
+    
+    
+    </script>
+    
+    
+</body>
+</html>

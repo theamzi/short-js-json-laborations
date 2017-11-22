@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="jquery-2.1.1.js"></script>
+
+<script type="text/javascript">
+
+var varde_g = 33; //global variabel
+
+function init() {
+		//felsökningshjälp
+	      console.log("utskrift i loggfönster");
+	}
+
+ // funktion för att hindra att submit skickar iväg formuläret. 
+	function form_action(form) {
+	 
+     //window.alert("utskrift i dialog");
+     //olika access till objekt i formuläret
+    
+     console.log(form);
+     console.log(varde_g); //global variabel accessad
+     console.log(document.getElementById('skicka_b').value);
+
+
+	// den här deklarationen skickar iväg formuläret. Behövs inte för labben. 		
+     //form.action = "x.php"; 
+     //form.submit();
+
+     return false;
+    }
+
+</script>
+</head>
+<body onload='init();'>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+<form id='form_1' name='form_1' onsubmit="return form_action(this);" action="x.php">
+ <input id='skicka_b' type="submit" value="skicka"/>
+</form>
+
+<button onclick="form_action(document.getElementById('form_1'));">Skicka ver. 2</button>
+    
+
+    
+    
+
+    
+
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+    </head>
+<body>
+<script type="text/javascript">
+    
+
+
+    
+    function validera() {
+    var epost = document.forms["form"]["epost"].value;
+        
+    if (epost == '' || epost.indexOf('@') == -1 ) {
+        alert("Ange en giltig e-postadress");
+        return false;
+    }
+        
+        var pid = document.forms["form"]["pid"].value;
+          if (pid == "") {
+        alert("Textfältet är tomt");
+        return false;
+    }
+        else
+            {
+        alert("Tack för din beställning");
+        return false;
+   }
+        
+}
+    
+  
+      function adress(){
+document.getElementById("adress").style.display = 'block';
+    
+}
+
+       function adress_dold(){
+document.getElementById("adress").style.display = 'none';
+    
+}
+    
+</script>
+    
+  
+    <form name="form" onsubmit="return validera()">
+        
+  E-post:<br>
+  <input type="text" name="epost">
+  <br>
+  Produkt-id:<br>
+  <input type="text" name="pid"><br>
+        
+        <input type="radio" name="express" íd="express" value="express" onclick="adress();">Express<br>
+        <input type="radio" name="pfor" id="pfor" value="pfor" onclick="adress();">Postförskott<br>
+         <input type="radio" name="hamtas" id="hamtas" value="hamtas" checked onclick="adress_dold();">Hämtas i butik<br>
+        
+        
+          <div id="adress" style="display : none;"> 
+    Adress:<br>
+  <input type="text" name="epost">
+  <br>
+         Postnummer:<br>
+  <input type="text" name="epost">
+  <br>
+         Ort:<br>
+  <input type="text" name="epost">
+  <br>
+    </div>
+        
+        	<input type="submit" name="skicka" class="button" value="Skicka" />
+        	<input type="submit" name="rensa" class="button" value="Rensa" />
+        
+</form>
+    
+
+</body>
+</html>
